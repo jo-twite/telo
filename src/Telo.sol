@@ -27,7 +27,9 @@ contract Telo is IERC721 {
 
 
     function ownerOf(uint256 tokenId) external view returns (address) {
-        return owners[tokenId];
+        address owner = owners[tokenId];
+        if (owner == address(0)) revert InValidNFTError();
+        return owner;
     }
     
 
