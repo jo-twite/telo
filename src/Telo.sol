@@ -39,7 +39,6 @@ contract Telo is IERC721 {
             revert TransferToZeroAddressError();
         }
 
-
         // @tokenId should be owned by @from
         if(from != owners[tokenId]) {
             revert InValidNFTError();
@@ -142,3 +141,4 @@ contract Telo is IERC721 {
         emit Transfer(owner, address(0), tokenId);
     }
 }
+
